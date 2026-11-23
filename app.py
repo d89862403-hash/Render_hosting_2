@@ -14,7 +14,10 @@ def auth():
   abort(401)
 @app.before_request
 def protect():
- if request.endpoint not in ("login","health","static"): auth()
+ if request.endpoint not in ("login","health","static"):
+  if not session.get("ok") and request.method == "GET" and request.endpoint == "home":
+   return redirect(url_for("login"))
+  auth()
 @app.get("/health")
 def health(): return jsonify(ok=True,service="ZORVEX HOSTING")
 @app.route("/login",methods=["GET","POST"])
