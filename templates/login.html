@@ -1,1 +1,22 @@
-<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>ZORVEX Login</title><style>body{background:#090b10;color:white;font:16px system-ui;display:grid;place-items:center;min-height:95vh}.card{background:#151923;padding:28px;border-radius:16px;width:min(340px,85vw)}input,button{box-sizing:border-box;width:100%;padding:13px;margin-top:14px;border-radius:8px}input{background:#090b10;color:white;border:1px solid #444}button{background:#e23d4f;color:white;border:0;font-weight:bold}</style></head><body><form class="card" method="post"><h2>ZORVEX HOSTING</h2><p>Owner login</p><input type="password" name="token" placeholder="Admin token" required><button>Login</button>{% for m in get_flashed_messages() %}<p>{{m}}</p>{% endfor %}</form></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090a10"><title>ZORVEX HOSTING — Secure Login</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:22px;background:radial-gradient(ellipse at 50% 0%,#3a101b 0%,#15101a 35%,#080a10 75%);color:#f7f5f7;font:15px Inter,system-ui,sans-serif}
+.card{width:min(420px,100%);padding:34px 28px;background:linear-gradient(145deg,rgba(29,31,43,.97),rgba(14,16,24,.98));border:1px solid #49303b;border-radius:22px;box-shadow:0 24px 80px #0009,0 0 45px #b51d3a18}
+.mark{width:58px;height:58px;margin:0 auto 18px;display:grid;place-items:center;border-radius:18px;background:linear-gradient(145deg,#ff5369,#94152e);font-size:25px;font-weight:900;box-shadow:0 8px 28px #e22d4b55}
+h1{text-align:center;margin:0;font-size:24px;letter-spacing:2px}h1 span{color:#ff6579}.sub{text-align:center;color:#a9a9b5;margin:9px 0 28px;font-size:13px}
+label{display:block;color:#d9d5dc;font-size:13px;margin-bottom:9px}input{width:100%;padding:15px 16px;border-radius:12px;border:1px solid #414252;background:#0b0d14;color:white;font:inherit;outline:none}input:focus{border-color:#ff526b;box-shadow:0 0 0 3px #ff526b20}
+button{width:100%;margin-top:17px;padding:15px;border:0;border-radius:12px;background:linear-gradient(100deg,#ff526b,#c51f40);color:white;font-weight:800;font-size:14px;letter-spacing:1px;cursor:pointer;box-shadow:0 9px 24px #d21d3d35}
+.error{margin:16px 0 0;padding:11px;border:1px solid #713342;border-radius:10px;background:#381923;color:#ffb4bf;text-align:center;font-size:13px}
+.foot{text-align:center;color:#747583;font-size:11px;margin-top:24px;letter-spacing:1.5px}
+</style></head><body>
+<form class="card" method="post">
+<div class="mark">Z</div><h1>ZORVEX <span>HOSTING</span></h1><p class="sub">Private control panel · Owner access only</p>
+<label for="token">ACCESS PASSWORD</label><input id="token" type="password" name="token" placeholder="Enter your password" autocomplete="current-password" required autofocus>
+<button type="submit">SECURE LOGIN&nbsp; →</button>
+{% for m in get_flashed_messages() %}<p class="error">{{m}}</p>{% endfor %}
+<div class="foot">SECURE OWNER PORTAL</div>
+</form></body></html>
