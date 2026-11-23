@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: zorvex-hosting
+    runtime: docker
+    plan: starter
+    region: singapore
+    autoDeploy: true
+    healthCheckPath: /health
+    envVars:
+      - key: DATA_DIR
+        value: /var/data
+      - key: MAX_UPLOAD_MB
+        value: "50"
+      - key: ADMIN_TOKEN
+        sync: false
+      - key: OWNER_EMAIL
+        sync: false
+      - key: FLASK_SECRET
+        generateValue: true
+    disk:
+      name: zorvex-data
+      mountPath: /var/data
+      sizeGB: 1
